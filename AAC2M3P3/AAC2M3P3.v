@@ -35,26 +35,26 @@
 //////////////////////////////////////////////////////////////////////////////
 // 
 */
-module find_errors                           // line 1
-  input  a[0:3];                             // line 2
-  output [3:0]b;                             // line 3
-  input [5:0]c                               // line 4
-                                             // line 5
-  wire [0:3]aw;                              // line 6
-  wire [3:0]bw;                              // line 7
-  reg [5:0]creg                              // line 8
-begin                                        // line 9
-  assign aw = a;                             // line 10
-  assign b = bw;                             // line 11
-  assign creg = c;                           // line 12
-always                                       // line 13 
-  begin                                      // line 14
-    if (creg = 4'h F)   //creg is all 1s     // line 15 
-       bw <= aw;                             // line 16  
-    else                                     // line 17
-     bw <= '0101';                           // line 18   
-    end;                                     // line 19
-  end process;                               // line 20  
-end                                          // line 21   
+module find_errors(                         // line 1
+  input  [0:3]a,                            // line 2
+  output [3:0]b,                            // line 3
+  input [5:0]c);                            // line 4
+                                            // line 5
+  wire [0:3]aw;                             // line 6
+  reg [3:0]bw;                              // line 7
+  wire [5:0]creg;                           // line 8
+                                            // line 9
+  assign aw = a;                            // line 10
+  assign b = bw;                            // line 11
+  assign creg = c;                          // line 12
+always @(*)                                 // line 13 
+  begin                                     // line 14
+    if (creg == 6'h3F)   //creg is all 1s   // line 15 
+      bw <= aw;                             // line 16  
+    else                                    // line 17
+      bw <= 4'b0101;                        // line 18   
+  end                                       // line 19
+                                            // line 20  
+endmodule                                   // line 21   
 
     
