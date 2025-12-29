@@ -36,19 +36,63 @@
 // 
   	                                            		
 
+module FullAdd( A,B,Cin,Sum,Cout);                	
+    input  A, B; 			
+    input Cin; 			
+    output Sum;
+    output Cout;
+
+    wire S1, C1, C2;
+
+    assign S1 = A ^ B;
+    assign Sum = S1 ^ Cin;
+    assign C1 = A & B;
+    assign C2 = S1 & Cin;
+    assign Cout = C1 | C2;
+
+endmodule // FullAdd
+
 module FullAdd4( A,B,Cin,Sum,Cout);                	
-    input [3:0] A, B;, 
+    input [3:0] A, B;
     input Cin; 			
     output [3:0] Sum;
     output Cout;
 
-                   	          	
 // student code here
+
+    wire C1, C2, C3;
+    
+    FullAdd FA0 (
+        .A(A[0]),
+        .B(B[0]),
+        .Cin(Cin),
+        .Sum(Sum[0]),
+        .Cout(C1)
+    );
+    
+    FullAdd FA1 (
+        .A(A[1]),
+        .B(B[1]),
+        .Cin(C1),
+        .Sum(Sum[1]),
+        .Cout(C2)
+    );
+    
+    FullAdd FA2 (
+        .A(A[2]),
+        .B(B[2]),
+        .Cin(C2),
+        .Sum(Sum[2]),
+        .Cout(C3)
+    );
+    
+    FullAdd FA3 (
+        .A(A[3]),
+        .B(B[3]),
+        .Cin(C3),
+        .Sum(Sum[3]),
+        .Cout(Cout)
+    );
 
 
 endmodule // Majority  
-
-
-
-
-    
