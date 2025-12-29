@@ -42,5 +42,13 @@ module Majority (A, B, C, Y);
                    	          	
 // student code here
 
+   wire AB, AC, BC;
+   assign AB = A & B;
+   assign AC = A & C;
+   assign BC = B & C;
+always @(*)
+   begin
+      Y = AB | AC | BC;
+   end
 
 endmodule // Majority  
