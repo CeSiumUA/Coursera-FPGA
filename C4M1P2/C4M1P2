@@ -1,0 +1,32 @@
+# Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
+# Loading project C4M1P2
+# Compile of DE10_LITE_Golden_Top.v was successful.
+# Compile of C4M1P2.vhd was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.DE10_LITE_Golden_Top
+# vsim -gui work.DE10_LITE_Golden_Top 
+# Start time: 08:29:28 on Jan 12,2026
+# Loading work.DE10_LITE_Golden_Top
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.c4m1p2(rtl)
+add wave -position end  sim:/DE10_LITE_Golden_Top/u1/V
+add wave -position end  sim:/DE10_LITE_Golden_Top/u1/HEX0
+add wave -position end  sim:/DE10_LITE_Golden_Top/u1/HEX1
+add wave -position end  sim:/DE10_LITE_Golden_Top/u1/d0
+add wave -position end  sim:/DE10_LITE_Golden_Top/u1/z
+add wave -position end  sim:/DE10_LITE_Golden_Top/u1/A
+force -freeze sim:/DE10_LITE_Golden_Top/u1/V 0000 0
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
+run
+force -freeze sim:/DE10_LITE_Golden_Top/u1/V 1111 0
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
+run

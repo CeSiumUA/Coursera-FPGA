@@ -11,7 +11,7 @@ end entity C4M1P2;
 
 architecture RTL of C4M1P2 is
 
-   signal hex0_seg, hex1_seg : std_logic_vector(3 downto 0);
+   signal d0, d1 : std_logic_vector(3 downto 0);
    signal z : std_logic;
    signal A : std_logic_vector(3 downto 0);
 
@@ -41,14 +41,14 @@ begin
 
    A <= std_logic_vector(unsigned(V) - 10) when z = '1' else V;
 
-   hex0_seg <= A;
-   hex1_seg <= "0000" when z = '0' else "0001";
+   d0 <= A;
+   d1 <= "0000" when z = '0' else "0001";
 
    -- HEX0 displays SW(3 downto 0)
    -- Bit 7 is decimal point (active low, so set to '1' to turn off)
-   HEX0 <= '1' & hex_to_7seg(hex0_seg);
+   HEX0 <= '1' & hex_to_7seg(d0);
    
    -- HEX1 displays SW(7 downto 4)
-   HEX1 <= '1' & hex_to_7seg(hex1_seg);
+   HEX1 <= '1' & hex_to_7seg(d1);
 
 end architecture RTL;
