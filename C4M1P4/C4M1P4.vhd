@@ -2,10 +2,10 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity C4M1P3 is
+entity C4M1P4 is
    port(
-      A : in std_logic_vector(3 downto 0);
-      B : in std_logic_vector(3 downto 0);
+      X : in std_logic_vector(3 downto 0);
+      Y : in std_logic_vector(3 downto 0);
       Cin : in std_logic;
       S : out std_logic_vector(3 downto 0);
       Cout : out std_logic
