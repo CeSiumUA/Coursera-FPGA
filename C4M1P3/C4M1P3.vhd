@@ -2,53 +2,29 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all;
 
-entity C4M1P2 is
+entity C4M1P3 is
    port(
-      V: in std_logic_vector(3 downto 0);
-      HEX0, HEX1: out std_logic_vector(7 downto 0)
-    );
-end entity C4M1P2;
+      A : in std_logic_vector(3 downto 0);
+      B : in std_logic_vector(3 downto 0);
+      Cin : in std_logic;
+      S : out std_logic_vector(3 downto 0);
+      Cout : out std_logic
+   );
+end entity C4M1P3;
 
-architecture RTL of C4M1P2 is
-
-   signal d0, d1 : std_logic_vector(3 downto 0);
-   signal z : std_logic;
-   signal A : std_logic_vector(3 downto 0);
-
-   -- Function to convert 4-bit input to 7-segment display pattern
-   function hex_to_7seg(hex_val : std_logic_vector(3 downto 0)) return std_logic_vector is
-      variable seg : std_logic_vector(6 downto 0);
-   begin
-      case hex_val is
-         when "0000" => seg := "1000000"; -- 0
-         when "0001" => seg := "1111001"; -- 1
-         when "0010" => seg := "0100100"; -- 2
-         when "0011" => seg := "0110000"; -- 3
-         when "0100" => seg := "0011001"; -- 4
-         when "0101" => seg := "0010010"; -- 5
-         when "0110" => seg := "0000010"; -- 6
-         when "0111" => seg := "1111000"; -- 7
-         when "1000" => seg := "0000000"; -- 8
-         when "1001" => seg := "0011000"; -- 9
-         when others => seg := "-------"; -- don't care for values 10-15
-      end case;
-      return seg;
-   end function;
-
+architecture RTL of C4M1P3 is
+   -- Internal carry signals
+   signal C : std_logic_vector(4 downto 0);
 begin
-
-   z <= '1' when V > "1001" else '0';
-
-   A <= std_logic_vector(unsigned(V) - 10) when z = '1' else V;
-
-   d0 <= A;
-   d1 <= "0000" when z = '0' else "0001";
-
-   -- HEX0 displays SW(3 downto 0)
-   -- Bit 7 is decimal point (active low, so set to '1' to turn off)
-   HEX0 <= '1' & hex_to_7seg(d0);
+   -- Connect input carry
+   C(0) <= Cin;
    
-   -- HEX1 displays SW(7 downto 4)
-   HEX1 <= '1' & hex_to_7seg(d1);
-
+   gen_adder: for i in 0 to 3 generate
+      S(i) <= A(i) xor B(i) xor C(i);
+      C(i+1) <= (A(i) and B(i)) or (C(i) and (A(i) xor B(i)));
+   end generate gen_adder;
+   
+   -- Connect output carry
+   Cout <= C(4);
+   
 end architecture RTL;
