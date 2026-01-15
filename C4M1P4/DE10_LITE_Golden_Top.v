@@ -134,6 +134,16 @@ module DE10_LITE_Golden_Top(
 //  Structural coding
 //=======================================================
 
-C4M1P3 u1 (.A(SW[7:4]), .B(SW[3:0]), .Cin(SW[8]), .S(LEDR[3:0]), .Cout(LEDR[4]));
+C4M1P4 u1 (	.X(SW[7:4]),
+			.Y(SW[3:0]),
+			.Cin(SW[8]), 
+			.S(LEDR[3:0]), 
+			.Cout(LEDR[4]), 
+			.HEX_X(HEX5),
+			.HEX_Y(HEX3),
+			.HEX_S0(HEX0),
+			.HEX_S1(HEX1),
+			.ERR(LEDR[9])
+			);
 
 endmodule
