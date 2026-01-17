@@ -20,6 +20,7 @@ architecture RTL of C4M1P5 is
    signal Sum : std_logic_vector(3 downto 0);
    signal T0 : unsigned(4 downto 0);
    signal Z0 : unsigned(4 downto 0);
+   signal Sub : unsigned(4 downto 0);
    signal c1 : std_logic;
    signal S0 : std_logic_vector(3 downto 0);
    signal S1 : std_logic;
@@ -58,7 +59,8 @@ begin
       end if;
    end process;
 
-   S0 <= std_logic_vector(T0 - Z0)(3 downto 0);
+   Sub <= T0 - Z0;
+   S0 <= std_logic_vector(Sub(3 downto 0));
    S1 <= c1;
 
    ERR <= '1' when (unsigned(A) > 9) or (unsigned(B) > 9) else '0';

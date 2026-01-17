@@ -1,32 +1,75 @@
 # Reading C:/intelFPGA_lite/18.1/modelsim_ase/tcl/vsim/pref.tcl
-# Loading project C4M1P2
-# Compile of DE10_LITE_Golden_Top.v was successful.
-# Compile of C4M1P2.vhd was successful.
-# 2 compiles, 0 failed with no errors.
-vsim -gui work.DE10_LITE_Golden_Top
-# vsim -gui work.DE10_LITE_Golden_Top 
-# Start time: 08:29:28 on Jan 12,2026
+# do C4M1P1_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim - Intel FPGA Edition vmap 10.5b Lib Mapping Utility 2016.10 Oct  5 2016
+# vmap work rtl_work 
+# Copying C:/intelFPGA_lite/18.1/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# 
+# vlog -vlog01compat -work work +incdir+D:/FPGA/C4M1P5 {D:/FPGA/C4M1P5/DE10_LITE_Golden_Top.v}
+# Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:02:09 on Jan 17,2026
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/FPGA/C4M1P5" D:/FPGA/C4M1P5/DE10_LITE_Golden_Top.v 
+# -- Compiling module DE10_LITE_Golden_Top
+# 
+# Top level modules:
+# 	DE10_LITE_Golden_Top
+# End time: 09:02:09 on Jan 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# vcom -93 -work work {D:/FPGA/C4M1P5/C4M1P5.vhd}
+# Model Technology ModelSim - Intel FPGA Edition vcom 10.5b Compiler 2016.10 Oct  5 2016
+# Start time: 09:02:09 on Jan 17,2026
+# vcom -reportprogress 300 -93 -work work D:/FPGA/C4M1P5/C4M1P5.vhd 
+# -- Loading package STANDARD
+# -- Loading package TEXTIO
+# -- Loading package std_logic_1164
+# -- Loading package NUMERIC_STD
+# -- Compiling entity C4M1P5
+# -- Compiling architecture RTL of C4M1P5
+# End time: 09:02:09 on Jan 17,2026, Elapsed time: 0:00:00
+# Errors: 0, Warnings: 0
+# 
+vsim work.DE10_LITE_Golden_Top
+# vsim work.DE10_LITE_Golden_Top 
+# Start time: 09:02:11 on Jan 17,2026
 # Loading work.DE10_LITE_Golden_Top
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
-# Loading work.c4m1p2(rtl)
-add wave -position end  sim:/DE10_LITE_Golden_Top/u1/V
-add wave -position end  sim:/DE10_LITE_Golden_Top/u1/HEX0
-add wave -position end  sim:/DE10_LITE_Golden_Top/u1/HEX1
-add wave -position end  sim:/DE10_LITE_Golden_Top/u1/d0
-add wave -position end  sim:/DE10_LITE_Golden_Top/u1/z
+# Loading work.c4m1p5(rtl)
 add wave -position end  sim:/DE10_LITE_Golden_Top/u1/A
-force -freeze sim:/DE10_LITE_Golden_Top/u1/V 0000 0
-# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
-# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
-# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
-# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
+add wave -position end  sim:/DE10_LITE_Golden_Top/u1/B
+add wave -position end  sim:/DE10_LITE_Golden_Top/u1/Cin
+add wave -position end  sim:/DE10_LITE_Golden_Top/u1/HEX_S0
+add wave -position end  sim:/DE10_LITE_Golden_Top/u1/HEX_S1
+force -freeze sim:/DE10_LITE_Golden_Top/u1/A 0000 0
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/A specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/A specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/A specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/A specified in the force.
+force -freeze sim:/DE10_LITE_Golden_Top/u1/B 0000 0
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/B specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/B specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/B specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/B specified in the force.
+force -freeze sim:/DE10_LITE_Golden_Top/u1/Cin 0 0
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/Cin specified in the force.
 run
-force -freeze sim:/DE10_LITE_Golden_Top/u1/V 1111 0
-# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
-# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
-# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
-# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/V specified in the force.
+# ** Warning: NUMERIC_STD.">": metavalue detected, returning FALSE
+#    Time: 0 ps  Iteration: 0  Instance: /DE10_LITE_Golden_Top/u1
+force -freeze sim:/DE10_LITE_Golden_Top/u1/A 1001 0
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/A specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/A specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/A specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/A specified in the force.
+force -freeze sim:/DE10_LITE_Golden_Top/u1/B 1001 0
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/B specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/B specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/B specified in the force.
+# ** Warning: (vsim-8780) Forcing /DE10_LITE_Golden_Top/SW as root of /DE10_LITE_Golden_Top/u1/B specified in the force.
 run
