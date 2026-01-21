@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<preferences>
+ <debug showDebugMenu="0" />
+ <systemtable filter="All Interfaces">
+  <columns>
+   <connections preferredWidth="287" />
+   <irq preferredWidth="34" />
+  </columns>
+ </systemtable>
+ <library
+   expandedCategories="Library/Basic Functions/Simulation; Debug and Verification/Debug and Performance,Library,Library/Interface Protocols/Serial,Library/Basic Functions,Library/Basic Functions/Simulation; Debug and Verification,Library/Interface Protocols,Project" />
+ <window width="2558" height="1367" x="1281" y="16" />
+ <generation simulation="VERILOG" />
+</preferences>
