@@ -49,7 +49,7 @@ module Embed_sysid (
 
   wire    [ 31: 0] readdata;
   //control_slave, which is an e_avalon_slave
-  assign readdata = address ? 1769024976 : 0;
+  assign readdata = address ? 1769029714 : 0;
 
 endmodule
 

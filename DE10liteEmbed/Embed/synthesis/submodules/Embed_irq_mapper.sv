@@ -22,7 +22,7 @@
 // Parameters
 //   NUM_RCVRS        : 5
 //   SENDER_IRW_WIDTH : 32
-//   IRQ_MAP          : 0:0,1:2,2:3,3:4,4:1
+//   IRQ_MAP          : 0:0,1:2,2:4,3:3,4:1
 //
 // -------------------------------------------------------
 
@@ -57,8 +57,8 @@ module Embed_irq_mapper
 
         sender_irq[0] = receiver0_irq;
         sender_irq[2] = receiver1_irq;
-        sender_irq[3] = receiver2_irq;
-        sender_irq[4] = receiver3_irq;
+        sender_irq[4] = receiver2_irq;
+        sender_irq[3] = receiver3_irq;
         sender_irq[1] = receiver4_irq;
     end
 

@@ -585,9 +585,9 @@
    type="VERILOG"
    library="sdram" />
  <file
-   path="simulation/submodules/Embed_onchip_memory2_0.v"
+   path="simulation/submodules/Embed_onchip_ram.v"
    type="VERILOG"
-   library="onchip_memory2_0" />
+   library="onchip_ram" />
  <file
    path="simulation/submodules/altera_onchip_flash_util.v"
    type="VERILOG"
@@ -637,9 +637,9 @@
    type="VERILOG"
    library="led_pio" />
  <file
-   path="simulation/submodules/Embed_jtag_uart_0.v"
+   path="simulation/submodules/Embed_jtag_uart.v"
    type="VERILOG"
-   library="jtag_uart_0" />
+   library="jtag_uart" />
  <file
    path="simulation/submodules/Embed_altpll_1.vo"
    type="VERILOG"
@@ -654,7 +654,5 @@
  <modelMap
    controllerPath="Embed.onchip_flash_0"
    modelPath="Embed.onchip_flash_0" />
- <modelMap
-   controllerPath="Embed.onchip_memory2_0"
-   modelPath="Embed.onchip_memory2_0" />
+ <modelMap controllerPath="Embed.onchip_ram" modelPath="Embed.onchip_ram" />
 </simPackage>
